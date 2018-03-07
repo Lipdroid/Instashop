@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="dtmweb.com.instashop.UserCategoryActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="186px"
+            android:layout_height="186px"
+            android:layout_marginBottom="156px"
+            android:src="@drawable/logo"/>
+
+        <Button
+            android:layout_width="975px"
+            android:layout_height="117px"
+            android:background="@drawable/white_rounded_corner"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:tag="45"
+            android:alpha="0.8"
+            android:text="Sign up as a Seller"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="normal"
+            android:textSize="45px" />
+
+        <Button
+            android:layout_width="975px"
+            android:layout_height="117px"
+            android:layout_marginTop="30px"
+            android:background="@drawable/white_rounded_corner"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:tag="45"
+            android:alpha="0.8"
+            android:text="Sign up as a Buyer"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="45px"
+            android:textStyle="normal" />
+    </LinearLayout>
+</RelativeLayout>
