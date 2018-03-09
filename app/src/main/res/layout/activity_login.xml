@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/main_bg"
     tools:context="dtmweb.com.instashop.UserCategoryActivity">
 
     <LinearLayout
@@ -20,11 +20,12 @@
             android:layout_marginBottom="156px"
             android:src="@drawable/logo" />
 
-        <View
+        <ImageView
+            android:id="@+id/intagram_login"
             android:layout_width="600px"
             android:layout_height="105px"
             android:layout_marginTop="49px"
-            android:background="@color/colorPrimary" />
+            android:src="@drawable/insta_login" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,6 +39,7 @@
             android:textSize="45px" />
 
         <EditText
+            android:id="@+id/et_mail"
             android:layout_width="975px"
             android:layout_height="105px"
             android:alpha="0.8"
@@ -53,6 +55,7 @@
             android:textStyle="normal" />
 
         <EditText
+            android:id="@+id/et_password"
             android:layout_width="975px"
             android:layout_height="105px"
             android:layout_marginTop="30px"
@@ -63,12 +66,14 @@
             android:hint="Password"
             android:paddingLeft="30px"
             android:tag="45"
+            android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="45px"
             android:textStyle="normal" />
 
         <Button
+            android:id="@+id/btn_go"
             android:layout_width="654px"
             android:layout_height="105px"
             android:layout_marginTop="80px"
@@ -91,6 +96,7 @@
             android:weightSum="2">
 
             <TextView
+                android:id="@+id/btn_forget_pass"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -101,6 +107,7 @@
                 android:textSize="33px" />
 
             <TextView
+                android:id="@+id/btn_sign_up"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/main_bg"
     tools:context="dtmweb.com.instashop.UserCategoryActivity">
 
     <LinearLayout
@@ -21,6 +21,7 @@
             android:src="@drawable/logo"/>
 
         <Button
+            android:id="@+id/btn_seller_signup"
             android:layout_width="975px"
             android:layout_height="117px"
             android:background="@drawable/white_rounded_corner"
@@ -35,6 +36,7 @@
             android:textSize="45px" />
 
         <Button
+            android:id="@+id/btn_buyer_signup"
             android:layout_width="975px"
             android:layout_height="117px"
             android:layout_marginTop="30px"
