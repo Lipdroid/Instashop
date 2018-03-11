@@ -6,6 +6,26 @@
     android:layout_height="match_parent"
     tools:context="dtmweb.com.instashop.MainActivity">
 
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/main_container_layout" />
+
+        <include
+            android:id="@+id/drawer_left"
+            layout="@layout/left_drawer_layout"
+            android:divider="@android:color/transparent" />
+
+        <include
+            android:id="@+id/drawer_right"
+            layout="@layout/right_drawer_layout" />
+
+
+        <include layout="@layout/app_bar_layout" />
+
+    </android.support.v4.widget.DrawerLayout>
 
 
 </RelativeLayout>

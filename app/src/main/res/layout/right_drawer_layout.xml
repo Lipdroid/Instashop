@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="@drawable/drawer_bg"
+    android:descendantFocusability="afterDescendants"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:descendantFocusability="afterDescendants"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="50px"
+            android:layout_height="60px"
+            android:layout_marginLeft="23px"
+            android:layout_marginRight="23px"
+            android:layout_marginTop="60px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_alignParentLeft="true"
+                android:src="@drawable/right_back_icon" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:descendantFocusability="afterDescendants"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="81px"
+            android:layout_marginRight="24px"
+            android:layout_marginTop="48px"
+            android:layout_toRightOf="@+id/header"
+            android:background="@drawable/dark_gray_rounded_corner">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="80px"
+                android:background="@null"
+                android:fontFamily="@font/roboto_light"
+                android:paddingLeft="33px"
+                android:tag="42"
+                android:textColor="#474747"
+                android:textColorHint="#474747"
+                android:textSize="42px" />
+
+            <ImageView
+                android:layout_width="80px"
+                android:layout_height="50px"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:src="@drawable/right_drawer_icon" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="81px"
+        android:layout_marginLeft="94px"
+        android:layout_marginRight="24px"
+        android:layout_marginTop="68px"
+        android:layout_toRightOf="@+id/header"
+        android:background="@drawable/dark_gray_rounded_corner">
+
+        <EditText
+            android:descendantFocusability="afterDescendants"
+            android:focusableInTouchMode="true"
+            android:clickable="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Price"
+            android:paddingLeft="33px"
+            android:tag="42"
+            android:textColor="#474747"
+            android:textColorHint="#474747"
+            android:textSize="42px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="81px"
+        android:layout_marginLeft="94px"
+        android:layout_marginRight="24px"
+        android:layout_marginTop="48px"
+        android:layout_toRightOf="@+id/header"
+        android:background="@drawable/dark_gray_rounded_corner">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="80px"
+            android:background="@null"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Location"
+            android:paddingLeft="33px"
+            android:tag="42"
+            android:textColor="#474747"
+            android:textColorHint="#474747"
+            android:textSize="42px" />
+
+        <ImageView
+            android:layout_width="40px"
+            android:layout_height="30px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="30px"
+            android:scaleType="fitXY"
+            android:src="@drawable/downarrow_dark" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="81px"
+        android:layout_marginLeft="94px"
+        android:layout_marginRight="24px"
+        android:layout_marginTop="48px"
+        android:layout_toRightOf="@+id/header"
+        android:background="@drawable/dark_gray_rounded_corner">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Store"
+            android:paddingLeft="33px"
+            android:tag="42"
+            android:textColor="#474747"
+            android:textColorHint="#474747"
+            android:textSize="42px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="81px"
+        android:layout_marginLeft="92px"
+        android:layout_marginRight="24px"
+        android:layout_marginTop="48px"
+        android:layout_toRightOf="@+id/header"
+        android:background="@drawable/blue_rounded_corner">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:fontFamily="@font/roboto_light"
+            android:hint="Search"
+            android:paddingLeft="33px"
+            android:tag="42"
+            android:textColor="#474747"
+            android:textColorHint="#474747"
+            android:textSize="42px" />
+    </RelativeLayout>
+</LinearLayout>

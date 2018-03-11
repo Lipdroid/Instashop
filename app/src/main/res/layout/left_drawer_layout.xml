@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:background="@drawable/drawer_bg">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:layout_marginBottom="20px"
+        android:layout_marginLeft="23px"
+        android:layout_marginRight="23px"
+        android:layout_marginTop="50px">
+
+        <ImageView
+            android:id="@+id/btn_cross"
+            android:layout_width="50px"
+            android:layout_height="50px"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/left_back_icon" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/user_info"
+        android:layout_width="match_parent"
+        android:layout_height="180px"
+        android:layout_below="@+id/header"
+        android:layout_marginTop="50px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="170px"
+                android:layout_height="170px"
+                android:layout_marginLeft="48px"
+                android:scaleType="fitXY"
+                android:src="@drawable/default_profile_image" />
+
+            <LinearLayout
+                android:layout_width="500px"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="-10px"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:singleLine="true"
+                    android:tag="54"
+                    android:text="Habib Abdullah"
+                    android:textColor="#474747"
+                    android:textSize="54px"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:singleLine="true"
+                    android:tag="39"
+                    android:text="+09 333 33 333"
+                    android:textColor="#474747"
+                    android:textSize="39px"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:singleLine="true"
+                    android:tag="39"
+                    android:text="Riyad,Saudi Arabia"
+                    android:textColor="#474747"
+                    android:textSize="39px"
+                    android:typeface="normal" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="36px"
+                android:layout_height="36px"
+                android:layout_marginRight="108px"
+                android:scaleType="fitXY"
+                android:src="@drawable/icon_edit" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user_info"
+        android:layout_marginTop="70px"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/btn_manage_products"
+            android:layout_width="match_parent"
+            android:layout_height="70px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/manage_product_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Manage Products"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/manage_order_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Manage Orders"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/my_store_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="My Store"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/language_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Language"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+            <ImageView
+                android:layout_width="25px"
+                android:layout_height="15px"
+                android:layout_marginLeft="10px"
+                android:layout_marginTop="5px"
+                android:layout_gravity="center_vertical"
+                android:scaleType="fitXY"
+                android:src="@drawable/downarrow_dark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/my_plan_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="My Plan"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/logout_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Logout"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="70px"
+            android:alpha="0.35"
+            android:background="#474747" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="70px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="90px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Terms &amp; Conditions"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="90px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Rate This App"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="90px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="About"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
