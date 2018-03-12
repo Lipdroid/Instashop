@@ -7,7 +7,7 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="130px"
         android:contentInsetEnd="0dp"
         android:contentInsetLeft="0dp"
         android:contentInsetRight="0dp"
@@ -20,11 +20,9 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:alpha="0.5"
                 android:background="#D9FFFFFF" />
 
             <RelativeLayout
@@ -38,7 +36,20 @@
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="30px"
+                    android:padding="5px"
                     android:src="@drawable/left_drawer_icon" />
+
+                <TextView
+                    android:id="@+id/header_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:fontFamily="@font/roboto"
+                    android:text=""
+                    android:textSize="36px"
+                    android:tag="36"
+                    android:textColor="#666666"/>
 
                 <ImageView
                     android:id="@+id/btn_right_drawer"
@@ -55,6 +66,7 @@
                     android:layout_alignParentBottom="true"
                     android:background="#ADADAD" />
             </RelativeLayout>
+
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
 

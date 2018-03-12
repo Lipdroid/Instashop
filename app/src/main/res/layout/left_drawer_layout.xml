@@ -15,7 +15,7 @@
         android:layout_marginTop="50px">
 
         <ImageView
-            android:id="@+id/btn_cross"
+            android:id="@+id/btn_back_left"
             android:layout_width="50px"
             android:layout_height="50px"
             android:layout_alignParentRight="true"
@@ -83,6 +83,7 @@
             </LinearLayout>
 
             <ImageView
+                android:id="@+id/btn_edit_profile"
                 android:layout_width="36px"
                 android:layout_height="36px"
                 android:layout_marginRight="108px"
@@ -127,6 +128,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_manage_orders"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">
@@ -155,6 +157,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_my_store"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">
@@ -183,6 +186,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_language"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">
@@ -219,6 +223,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_my_plan"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">
@@ -247,6 +252,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">
@@ -283,6 +289,7 @@
             android:background="#474747" />
 
         <LinearLayout
+            android:id="@+id/btn_terms"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="70px">
@@ -303,6 +310,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_rate"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">
@@ -323,6 +331,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/btn_about"
             android:layout_width="match_parent"
             android:layout_height="70px"
             android:layout_marginTop="40px">

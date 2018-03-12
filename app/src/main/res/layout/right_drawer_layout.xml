@@ -6,13 +6,11 @@
     android:background="@drawable/drawer_bg"
     android:descendantFocusability="afterDescendants"
     android:focusableInTouchMode="true"
-    android:clickable="true"
     android:orientation="vertical">
 
     <RelativeLayout
         android:descendantFocusability="afterDescendants"
         android:focusableInTouchMode="true"
-        android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize">
 
@@ -25,6 +23,7 @@
             android:layout_marginTop="60px">
 
             <ImageView
+                android:id="@+id/btn_back_right"
                 android:layout_width="50px"
                 android:layout_height="50px"
                 android:layout_alignParentLeft="true"
@@ -43,6 +42,7 @@
             android:background="@drawable/dark_gray_rounded_corner">
 
             <EditText
+                android:id="@+id/et_search"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginRight="80px"
@@ -74,6 +74,7 @@
         android:background="@drawable/dark_gray_rounded_corner">
 
         <EditText
+            android:id="@+id/et_price"
             android:descendantFocusability="afterDescendants"
             android:focusableInTouchMode="true"
             android:clickable="true"
@@ -99,6 +100,7 @@
         android:background="@drawable/dark_gray_rounded_corner">
 
         <EditText
+            android:id="@+id/et_location"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginRight="80px"
@@ -131,6 +133,7 @@
         android:background="@drawable/dark_gray_rounded_corner">
 
         <EditText
+            android:id="@+id/et_store"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"
@@ -153,6 +156,7 @@
         android:background="@drawable/blue_rounded_corner">
 
         <Button
+            android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@null"

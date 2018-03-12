@@ -1,0 +1,14 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dtmweb.com.instashop.fragments.MyStoreFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="900px"
+        android:src="@drawable/test_my_store_cover"
+        android:scaleType="centerCrop"
+        android:id="@+id/imageView" />
+
+</FrameLayout>
