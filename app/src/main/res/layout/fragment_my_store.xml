@@ -4,11 +4,98 @@
     android:layout_height="match_parent"
     tools:context="dtmweb.com.instashop.fragments.MyStoreFragment">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="900px"
-        android:src="@drawable/test_my_store_cover"
-        android:scaleType="centerCrop"
-        android:id="@+id/imageView" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="800px"
+            android:scaleType="centerCrop"
+            android:src="@drawable/test_my_store_cover" />
+
+        <LinearLayout
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="50px"
+            android:layout_marginBottom="20px">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="105px"
+                    android:layout_height="105px"
+                    android:layout_marginLeft="0px"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/test_perfume_zone_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="-10px"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:singleLine="true"
+                        android:tag="54"
+                        android:layout_marginRight="10px"
+                        android:text="The Pefume Zone"
+                        android:textColor="#666666"
+                        android:textSize="54px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:singleLine="true"
+                        android:layout_marginRight="10px"
+                        android:tag="39"
+                        android:text="+09 333 33 333"
+                        android:textColor="#666666"
+                        android:textSize="39px" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:singleLine="true"
+                        android:layout_marginRight="10px"
+                        android:tag="39"
+                        android:text="33 King Road,Riyad"
+                        android:textColor="#666666"
+                        android:textSize="39px" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="40px"
+            android:layout_marginRight="40px"
+            android:gravity="center"
+            android:horizontalSpacing="10px"
+            android:numColumns="2"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="20px" />
+    </LinearLayout>
+
 
 </FrameLayout>

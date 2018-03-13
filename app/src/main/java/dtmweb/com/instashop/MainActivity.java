@@ -17,6 +17,7 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebViewFragment;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -25,7 +26,10 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 import dtmweb.com.instashop.Constants.Constants;
+import dtmweb.com.instashop.fragments.AddProductFragment;
 import dtmweb.com.instashop.fragments.HomeFragment;
 import dtmweb.com.instashop.fragments.ManageOrderFragment;
 import dtmweb.com.instashop.fragments.ManageProductFragment;
@@ -71,12 +75,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentManager mFragManager;
     private Fragment mCurrentFrag;
     private TextView header_title;
+    private FragmentTransaction fragTransaction = null;
+    private ArrayList<Fragment> mSecondStageFragArray = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mContext = this;
+        mSecondStageFragArray = new ArrayList<Fragment>();
         findViews();
         mDrawerLayout.setScrimColor(Color.TRANSPARENT);
         setSupportActionBar(mToolBar);
@@ -143,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         drawer_left_layout = (RelativeLayout) findViewById(R.id.drawer_left);
         drawer_right_layout = (LinearLayout) findViewById(R.id.drawer_right);
-        header_title= (TextView)findViewById(R.id.header_title);
+        header_title = (TextView) findViewById(R.id.header_title);
 
         //left drawer items
         btn_manage_products = (LinearLayout) findViewById(R.id.btn_manage_products);
@@ -282,13 +289,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // init fragment manager
         mFragManager = getSupportFragmentManager();
         // create transaction
-        FragmentTransaction fragTransaction = mFragManager.beginTransaction();
+        fragTransaction = mFragManager.beginTransaction();
 
         // init argument
         Bundle args = new Bundle();
 
+        //check if there is any backstack if yes then remove it
+        int count = mFragManager.getBackStackEntryCount();
+        if (count != 0) {
+            //this will clear the back stack and displays no animation on the screen
+            mFragManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        }
+
+
         // check current fragment is wanted fragment
-        if (mCurrentFrag != null && mCurrentFrag.getTag().equals(String.valueOf(fragId))) {
+        if (mCurrentFrag != null && mCurrentFrag.getTag() != null && mCurrentFrag.getTag().equals(String.valueOf(fragId))) {
             return;
         }
 
@@ -342,6 +357,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case Constants.FRAG_MY_STORE:
                 header_title.setText("");
                 break;
+            case Constants.FRAG_ADD_PRODUCT:
+                header_title.setText("Add Product");
+                break;
             default:
                 break;
         }
@@ -354,4 +372,62 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         changeHeaderLayout(fragId);
     }
 
+    public void addSecondStageFragment(int destFragId, Object obj) {
+        mFragManager = getSupportFragmentManager();
+        // create transaction
+        fragTransaction = mFragManager.beginTransaction();
+        fragTransaction.setCustomAnimations(R.anim.view_transition_in_left,
+                R.anim.view_transition_out_right, R.anim.view_transition_in_left,
+                R.anim.view_transition_out_right);
+
+        Bundle args = null;
+
+
+        Fragment frag = null;
+        switch (destFragId) {
+            case Constants.FRAG_ADD_PRODUCT:
+                frag = new AddProductFragment();
+                changeHeaderLayout(Constants.FRAG_ADD_PRODUCT);
+                break;
+            default:
+                break;
+        }
+        // add argument for sent to other fragment
+        if (args != null) {
+            frag.setArguments(args);
+        }
+
+        mCurrentFrag = frag;
+
+        // param 1: container id, param 2: new fragment, param 3: fragment id
+        fragTransaction.add(R.id.main_container, frag, String.valueOf(destFragId));
+        fragTransaction.addToBackStack(String.valueOf(destFragId));
+        fragTransaction.commit();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int count = fragmentManager.getBackStackEntryCount();
+        if (count == 0) {
+            finish();
+        } else {
+            String title = fragmentManager.getBackStackEntryAt(count - 1).getName();
+            super.onBackPressed();
+            updateActionBar(Integer.valueOf(title), null);
+        }
+    }
+
+    public void updateActionBar(int destFragId, Object obj) {
+        String title = "";
+        switch (destFragId) {
+            case Constants.FRAG_ADD_PRODUCT:
+                title = "";
+                mCurrentFrag = null;
+                break;
+        }
+
+        header_title.setText(title);
+    }
 }

@@ -13,10 +13,10 @@ import dtmweb.com.instashop.utils.MultipleScreen;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ManageOrderFragment extends Fragment {
+public class AddProductFragment extends Fragment {
 
 
-    public ManageOrderFragment() {
+    public AddProductFragment() {
         // Required empty public constructor
     }
 
@@ -25,10 +25,10 @@ public class ManageOrderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_manage_order, container, false);
+        View root = inflater.inflate(R.layout.fragment_add_product, container, false);
         new MultipleScreen(getActivity());
         MultipleScreen.resizeAllView((ViewGroup) root);
         return root;
     }
-
 }
+

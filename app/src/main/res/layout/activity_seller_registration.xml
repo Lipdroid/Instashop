@@ -305,6 +305,7 @@
             android:textColor="@color/dark_gray"
             android:textSize="45px"
             android:textStyle="normal" />
+
     </LinearLayout>
 
 </RelativeLayout>
