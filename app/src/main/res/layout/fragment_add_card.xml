@@ -1,0 +1,101 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dtmweb.com.instashop.fragments.AddCardFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="130px" />
+
+        <EditText
+            android:layout_width="975px"
+            android:layout_height="90px"
+            android:layout_marginTop="50px"
+            android:background="@drawable/gray_rounded_corner_transparent"
+            android:fontFamily="@font/roboto"
+            android:hint="Add Card Number"
+            android:paddingLeft="30px"
+            android:tag="45"
+            android:textColor="@color/colorAccent"
+            android:textSize="45px"
+            android:typeface="normal" />
+
+        <LinearLayout
+            android:layout_width="975px"
+            android:layout_height="90px"
+            android:layout_marginTop="30px"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/et_password"
+                android:layout_width="975px"
+                android:layout_height="90px"
+                android:layout_marginRight="10px"
+                android:layout_weight="1"
+                android:background="@drawable/gray_rounded_corner_transparent"
+                android:fontFamily="@font/roboto"
+                android:hint="Month"
+                android:inputType="textPassword"
+                android:paddingLeft="30px"
+                android:tag="45"
+                android:textColor="@color/colorAccent"
+                android:textSize="45px"
+                android:typeface="normal" />
+
+            <EditText
+                android:id="@+id/et_password_retype"
+                android:layout_width="975px"
+                android:layout_height="90px"
+                android:layout_marginLeft="10px"
+                android:layout_weight="1"
+                android:background="@drawable/gray_rounded_corner_transparent"
+                android:fontFamily="@font/roboto"
+                android:hint="Year"
+                android:inputType="textPassword"
+                android:paddingLeft="30px"
+                android:tag="45"
+                android:textColor="@color/colorAccent"
+                android:textSize="45px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="975px"
+            android:layout_height="90px"
+            android:layout_marginTop="30px"
+            android:background="@drawable/gray_rounded_corner_transparent"
+            android:fontFamily="@font/roboto"
+            android:hint="Cvv"
+            android:paddingLeft="30px"
+            android:tag="45"
+            android:textColor="@color/colorAccent"
+            android:textSize="45px"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/btn_go"
+            android:layout_width="510px"
+            android:layout_height="90px"
+            android:layout_marginTop="80px"
+            android:background="@drawable/btn_gray_rounded_corner_selector"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:tag="45"
+            android:text="Done"
+            android:textAllCaps="false"
+            android:textColor="@color/dark_gray"
+            android:textSize="45px"
+            android:textStyle="normal" />
+    </LinearLayout>
+
+
+</FrameLayout>

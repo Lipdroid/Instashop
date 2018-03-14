@@ -40,6 +40,22 @@
                     android:src="@drawable/left_drawer_icon" />
 
                 <TextView
+                    android:id="@+id/nav_badge"
+                    android:layout_width="50px"
+                    android:layout_height="50px"
+                    android:background="@drawable/white_badge"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="20"
+                    android:layout_marginLeft="87px"
+                    android:layout_marginTop="20px"
+                    android:textColor="#208CA7"
+                    android:textSize="25px"
+                    android:tag="25"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
                     android:id="@+id/header_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

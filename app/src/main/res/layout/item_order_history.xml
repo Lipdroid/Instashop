@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="370px"
+        android:layout_marginBottom="30px"
+        android:layout_marginLeft="50px"
+        android:layout_marginRight="50px"
+        android:layout_marginTop="30px"
+        android:background="@drawable/gray_rounded_corner_bg"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="20px"
+                android:layout_weight=".7"
+                android:fontFamily="@font/roboto"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Order no"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="20px"
+                android:layout_weight="1.3"
+                android:fontFamily="@font/roboto"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="AA021"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="#DBDBDB" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="10px"
+                android:layout_weight=".7"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Invoice no"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="10px"
+                android:layout_weight="1.3"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="110 1211 432"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="0px"
+                android:layout_weight=".7"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Date"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="0px"
+                android:layout_weight="1.3"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="12 May 18"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="0px"
+                android:layout_weight=".7"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="SAR"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10px"
+                android:layout_marginRight="30px"
+                android:layout_marginTop="0px"
+                android:layout_weight="1.3"
+                android:fontFamily="@font/roboto_light"
+                android:gravity="left"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="520"
+                android:textColor="#555555"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/blue_bottom_rounded_corner"
+            android:text="Paid"
+            android:textColor="@color/white"
+            android:textSize="42px"
+            android:tag="42"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

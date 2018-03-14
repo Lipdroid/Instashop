@@ -11,4 +11,5 @@
         android:scaleType="centerCrop"
         android:id="@+id/imageView" />
 
+
 </FrameLayout>

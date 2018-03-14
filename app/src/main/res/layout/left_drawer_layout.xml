@@ -100,9 +100,110 @@
         android:orientation="vertical">
 
         <LinearLayout
-            android:id="@+id/btn_manage_products"
+            android:id="@+id/btn_home"
             android:layout_width="match_parent"
             android:layout_height="70px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/home_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="Home"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_chart"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/my_chart_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="My Chart"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+            <TextView
+                android:id="@+id/my_chart_badge"
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:background="@drawable/dark_gray_badge"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="2"
+                android:layout_marginLeft="20px"
+                android:textColor="#FFF"
+                android:textSize="25px"
+                android:tag="25"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_my_orders"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
+
+            <ImageView
+                android:layout_width="50px"
+                android:layout_height="50px"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="72px"
+                android:scaleType="fitXY"
+                android:src="@drawable/my_order_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="18px"
+                android:fontFamily="@font/roboto_light"
+                android:singleLine="true"
+                android:tag="42"
+                android:text="My Orders"
+                android:textColor="#474747"
+                android:textSize="42px"
+                android:typeface="normal" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_manage_products"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_marginTop="40px">
 
             <ImageView
                 android:layout_width="50px"
@@ -211,12 +312,13 @@
                 android:textColor="#474747"
                 android:textSize="42px"
                 android:typeface="normal" />
+
             <ImageView
                 android:layout_width="25px"
                 android:layout_height="15px"
+                android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10px"
                 android:layout_marginTop="5px"
-                android:layout_gravity="center_vertical"
                 android:scaleType="fitXY"
                 android:src="@drawable/downarrow_dark" />
 

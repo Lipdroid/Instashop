@@ -1,7 +1,6 @@
 package dtmweb.com.instashop.fragments;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +12,7 @@ import android.widget.GridView;
 
 import java.util.List;
 
-import dtmweb.com.instashop.Constants.Constants;
+import dtmweb.com.instashop.constants.Constants;
 import dtmweb.com.instashop.MainActivity;
 import dtmweb.com.instashop.R;
 import dtmweb.com.instashop.adapters.ProductGridAdapter;

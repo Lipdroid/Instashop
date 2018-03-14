@@ -1,26 +1,18 @@
 package dtmweb.com.instashop;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.Rect;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.webkit.WebViewFragment;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -28,8 +20,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import dtmweb.com.instashop.Constants.Constants;
+import dtmweb.com.instashop.constants.Constants;
+import dtmweb.com.instashop.fragments.AddCardFragment;
 import dtmweb.com.instashop.fragments.AddProductFragment;
+import dtmweb.com.instashop.fragments.ChoosePaymentTypeFragment;
 import dtmweb.com.instashop.fragments.HomeFragment;
 import dtmweb.com.instashop.fragments.ManageOrderFragment;
 import dtmweb.com.instashop.fragments.ManageProductFragment;
@@ -50,6 +44,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private RelativeLayout main_container = null;
     //left drawers items
+    private LinearLayout btn_home = null;
+    private LinearLayout btn_my_chart = null;
+    private LinearLayout btn_my_orders = null;
     private LinearLayout btn_manage_products = null;
     private LinearLayout btn_manage_orders = null;
     private LinearLayout btn_my_store = null;
@@ -85,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mContext = this;
         mSecondStageFragArray = new ArrayList<Fragment>();
         findViews();
+        setUpLeftDrawer(Constants.CATEGORY_SELLER);
         mDrawerLayout.setScrimColor(Color.TRANSPARENT);
         setSupportActionBar(mToolBar);
         getSupportActionBar().setHomeButtonEnabled(true);
@@ -122,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_left_drawer.setOnClickListener(this);
         btn_right_drawer.setOnClickListener(this);
         //left drawer listener
+        btn_home.setOnClickListener(this);
         btn_manage_products.setOnClickListener(this);
         btn_manage_orders.setOnClickListener(this);
         btn_my_store.setOnClickListener(this);
@@ -133,7 +132,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_about.setOnClickListener(this);
         btn_back_left.setOnClickListener(this);
         btn_edit_profile.setOnClickListener(this);
-
+        btn_my_chart.setOnClickListener(this);
+        btn_my_orders.setOnClickListener(this);
         //right drawer listener
         btn_back_right.setOnClickListener(this);
         btn_search.setOnClickListener(this);
@@ -153,6 +153,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         header_title = (TextView) findViewById(R.id.header_title);
 
         //left drawer items
+        btn_home = (LinearLayout) findViewById(R.id.btn_home);
+        btn_my_chart = (LinearLayout) findViewById(R.id.btn_my_chart);
+        btn_my_orders = (LinearLayout) findViewById(R.id.btn_my_orders);
         btn_manage_products = (LinearLayout) findViewById(R.id.btn_manage_products);
         btn_manage_orders = (LinearLayout) findViewById(R.id.btn_manage_orders);
         btn_my_store = (LinearLayout) findViewById(R.id.btn_my_store);
@@ -187,6 +190,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_right_drawer:
                 afterClickRightDrawerBtn();
                 break;
+            case R.id.btn_home:
+                closeLeftDrawer();
+                afterClickMenuItem(Constants.FRAG_HOME);
+                break;
+            case R.id.btn_my_chart:
+                closeLeftDrawer();
+                break;
+            case R.id.btn_my_orders:
+                closeLeftDrawer();
+                break;
             case R.id.btn_manage_products:
                 closeLeftDrawer();
                 afterClickMenuItem(Constants.FRAG_MANAGE_PRODUCTS);
@@ -201,12 +214,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_language:
                 closeLeftDrawer();
+                afterClickMenuItem(Constants.FRAG_ADD_NEW_CARD);
                 break;
             case R.id.btn_my_plan:
                 closeLeftDrawer();
                 break;
             case R.id.btn_logout:
                 closeLeftDrawer();
+                afterClickMenuItem(Constants.FRAG_CHOOSE_PAYMENT_METHOD);
                 break;
             case R.id.btn_terms:
                 closeLeftDrawer();
@@ -322,6 +337,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case Constants.FRAG_MY_STORE:
                 newFrag = new MyStoreFragment();
                 break;
+            case Constants.FRAG_ADD_NEW_CARD:
+                newFrag = new AddCardFragment();
+                break;
+            case Constants.FRAG_CHOOSE_PAYMENT_METHOD:
+                newFrag = new ChoosePaymentTypeFragment();
+                break;
             default:
                 break;
         }
@@ -429,5 +450,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         header_title.setText(title);
+    }
+
+    private void setUpLeftDrawer(String userType) {
+        switch (userType) {
+            case Constants.CATEGORY_BUYER:
+                btn_my_chart.setVisibility(View.VISIBLE);
+                btn_my_orders.setVisibility(View.VISIBLE);
+                btn_manage_products.setVisibility(View.GONE);
+                btn_manage_orders.setVisibility(View.GONE);
+                btn_my_store.setVisibility(View.GONE);
+                btn_my_plan.setVisibility(View.GONE);
+                break;
+            case Constants.CATEGORY_SELLER:
+                btn_my_chart.setVisibility(View.GONE);
+                btn_my_orders.setVisibility(View.GONE);
+                btn_manage_products.setVisibility(View.VISIBLE);
+                btn_manage_orders.setVisibility(View.VISIBLE);
+                btn_my_store.setVisibility(View.VISIBLE);
+                btn_my_plan.setVisibility(View.VISIBLE);
+                break;
+        }
     }
 }

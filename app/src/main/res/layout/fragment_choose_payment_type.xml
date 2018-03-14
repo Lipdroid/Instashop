@@ -1,0 +1,73 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dtmweb.com.instashop.fragments.ChoosePaymentTypeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="130px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="108px"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="76px"
+                android:layout_height="50px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/cash_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:fontFamily="@font/roboto_light"
+                android:tag="40"
+                android:text="Cash"
+                android:textColor="#666666"
+                android:textSize="40px" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="#D4D4D4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="108px"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="76px"
+                android:layout_height="50px"
+                android:layout_marginLeft="50px"
+                android:src="@drawable/visa_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30px"
+                android:fontFamily="@font/roboto_light"
+                android:tag="40"
+                android:text="Visa"
+                android:textColor="#666666"
+                android:textSize="40px" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5px"
+            android:background="#D4D4D4" />
+
+    </LinearLayout>
+
+</FrameLayout>
