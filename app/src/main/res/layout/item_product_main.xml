@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="890px"
+        android:layout_marginLeft="40px"
+        android:layout_marginRight="40px"
+        android:layout_marginTop="0px"
+        android:layout_marginBottom="10px"
+        android:background="@drawable/blue_item_bg"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="534px"
+            android:gravity="center_horizontal"
+            android:scaleType="center"
+            android:src="@drawable/test_product_image" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="146px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:singleLine="true"
+                    android:tag="55"
+                    android:text="Black Ophium"
+                    android:textColor="@color/blue_main"
+                    android:textSize="55px"
+                    android:typeface="normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:singleLine="true"
+                    android:tag="55"
+                    android:text="Perfume for Female"
+                    android:textColor="@color/blue_main"
+                    android:textSize="55px"
+                    android:typeface="normal" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:fontFamily="@font/roboto"
+                android:singleLine="true"
+                android:tag="45"
+                android:text="SAR 3000"
+                android:layout_marginTop="10px"
+                android:layout_marginRight="10px"
+                android:textSize="35px"
+                android:typeface="normal" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/btn_search"
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"
+            android:layout_marginTop="50px"
+            android:layout_marginBottom="20px">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="105px"
+                    android:layout_height="105px"
+                    android:layout_marginLeft="0px"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/test_perfume_zone_logo" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30px"
+                    android:layout_marginTop="-10px"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:singleLine="true"
+                        android:tag="40"
+                        android:layout_marginRight="10px"
+                        android:text="The Pefume Zone"
+                        android:textColor="#666666"
+                        android:textSize="40px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_thin"
+                        android:singleLine="true"
+                        android:layout_marginRight="10px"
+                        android:tag="35"
+                        android:text="12 March 2018"
+                        android:textColor="#666666"
+                        android:textSize="35px" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
