@@ -314,6 +314,7 @@
                 android:typeface="normal" />
 
             <ImageView
+                android:id="@+id/arrow_language"
                 android:layout_width="25px"
                 android:layout_height="15px"
                 android:layout_gravity="center_vertical"

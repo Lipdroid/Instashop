@@ -1,7 +1,10 @@
 package dtmweb.com.instashop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -9,14 +12,19 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -58,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout btn_about = null;
     private ImageView btn_back_left = null;
     private ImageView btn_edit_profile = null;
+    private ImageView arrow_language = null;
 
     //right drawer items
     private EditText et_search = null;
@@ -74,6 +83,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView header_title;
     private FragmentTransaction fragTransaction = null;
     private ArrayList<Fragment> mSecondStageFragArray = null;
+    private PopupWindow popupWindow = null;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +178,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_about = (LinearLayout) findViewById(R.id.btn_about);
         btn_back_left = (ImageView) findViewById(R.id.btn_back_left);
         btn_edit_profile = (ImageView) findViewById(R.id.btn_edit_profile);
+        arrow_language = (ImageView) findViewById(R.id.arrow_language);
 
         //right drawer item
         et_search = (EditText) findViewById(R.id.et_search);
@@ -213,8 +225,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 afterClickMenuItem(Constants.FRAG_MY_STORE);
                 break;
             case R.id.btn_language:
-                closeLeftDrawer();
-                afterClickMenuItem(Constants.FRAG_ADD_NEW_CARD);
+                showPopup(arrow_language);
                 break;
             case R.id.btn_my_plan:
                 closeLeftDrawer();
@@ -471,5 +482,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 btn_my_plan.setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    /* you should refer to a view to stick your popup wherever u want.
+     ** e.g. Button button  = (Button) findviewbyId(R.id.btn);
+     **     if(popupWindow != null)
+     **         showPopup(button);
+     **/
+    public void showPopup(View v) {
+        LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        final View popupView = layoutInflater.inflate(R.layout.popup_language_layout, null);
+        LinearLayout btn_arabic = (LinearLayout) popupView.findViewById(R.id.btn_arabic);
+        LinearLayout btn_english = (LinearLayout) popupView.findViewById(R.id.btn_english);
+        popupWindow = new PopupWindow(
+                popupView,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        popupWindow.setBackgroundDrawable(new BitmapDrawable());
+        popupWindow.setOutsideTouchable(true);
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                //TODO do sth here on dismiss
+                closeLeftDrawer();
+            }
+        });
+        btn_arabic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set language to arabic
+                popupWindow.dismiss();
+
+            }
+        });
+        btn_english.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //set language to english
+                popupWindow.dismiss();
+
+            }
+        });
+        mCorrectSize.correctSize(popupView);
+        popupWindow.showAsDropDown(v);
     }
 }

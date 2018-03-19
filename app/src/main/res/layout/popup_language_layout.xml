@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:id="@+id/btn_arabic"
+        android:layout_width="300px"
+        android:layout_height="90px"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_marginLeft="-30px"
+            android:layout_marginRight="20px"
+            android:src="@drawable/blue_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:tag="42"
+            android:text="Arabic"
+            android:textColor="#666666"
+            android:textSize="42px" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_english"
+        android:layout_width="300px"
+        android:layout_height="90px"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:layout_marginLeft="-20px"
+            android:layout_marginRight="20px"
+            android:src="@drawable/black_circle" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_light"
+            android:tag="42"
+            android:text="English"
+            android:textColor="#666666"
+            android:textSize="42px" />
+    </LinearLayout>
+
+
+</LinearLayout>
