@@ -1,0 +1,285 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="dtmweb.com.instashop.fragments.AddProductFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="130px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23px"
+            android:layout_marginRight="23px"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/btn_image_selection"
+                android:layout_width="189px"
+                android:layout_height="189px"
+                android:layout_marginTop="50px"
+                android:src="@drawable/icon_image_default" />
+
+            <EditText
+                android:id="@+id/et_store_name"
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="50px"
+                android:background="@drawable/gray_rounded_corner"
+                android:fontFamily="@font/roboto"
+                android:hint="Store Name"
+                android:paddingLeft="30px"
+                android:tag="45"
+                android:textColor="@color/colorAccent"
+                android:textSize="45px"
+                android:typeface="normal" />
+
+            <LinearLayout
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="30px"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="975px"
+                    android:layout_height="105px"
+                    android:layout_marginRight="10px"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_rounded_corner"
+                    android:fontFamily="@font/roboto"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="30px"
+                    android:tag="45"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+                <EditText
+                    android:id="@+id/et_password_retype"
+                    android:layout_width="975px"
+                    android:layout_height="105px"
+                    android:layout_marginLeft="10px"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_rounded_corner"
+                    android:fontFamily="@font/roboto"
+                    android:hint="Retype Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="30px"
+                    android:tag="45"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_bank_name"
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="30px"
+                android:background="@drawable/gray_rounded_corner"
+                android:fontFamily="@font/roboto"
+                android:hint="Bank Name"
+                android:paddingLeft="30px"
+                android:tag="45"
+                android:textColor="@color/colorAccent"
+                android:textSize="45px"
+                android:typeface="normal" />
+
+            <LinearLayout
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="30px"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/et_bank_account_name"
+                    android:layout_width="975px"
+                    android:layout_height="105px"
+                    android:layout_marginRight="10px"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_rounded_corner"
+                    android:fontFamily="@font/roboto"
+                    android:hint="Bank account name"
+                    android:paddingLeft="30px"
+                    android:tag="45"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+                <EditText
+                    android:id="@+id/et_bank_account_number"
+                    android:layout_width="975px"
+                    android:layout_height="105px"
+                    android:layout_marginLeft="10px"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_rounded_corner"
+                    android:fontFamily="@font/roboto"
+                    android:hint="Bank account number"
+                    android:paddingLeft="20px"
+                    android:tag="45"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="30px"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10px"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/et_country"
+                        android:layout_width="975px"
+                        android:layout_height="105px"
+                        android:background="@drawable/gray_rounded_corner"
+                        android:editable="false"
+                        android:fontFamily="@font/roboto"
+                        android:hint="Country"
+                        android:paddingLeft="30px"
+                        android:tag="45"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="45px"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:layout_width="35px"
+                        android:layout_height="25px"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="240px"
+                        android:layout_marginTop="45px"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/downarrow" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10px"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/et_city"
+                        android:layout_width="975px"
+                        android:layout_height="105px"
+                        android:layout_marginLeft="10px"
+                        android:layout_weight="1"
+                        android:background="@drawable/gray_rounded_corner"
+                        android:editable="false"
+                        android:fontFamily="@font/roboto"
+                        android:hint="City"
+                        android:paddingLeft="30px"
+                        android:tag="45"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="45px"
+                        android:typeface="normal" />
+
+                    <ImageView
+                        android:layout_width="35px"
+                        android:layout_height="25px"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="310px"
+                        android:layout_marginTop="45px"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/downarrow" />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="30px"
+                android:background="@drawable/gray_rounded_corner"
+                android:fontFamily="@font/roboto"
+                android:hint="Address"
+                android:paddingLeft="30px"
+                android:tag="45"
+                android:textColor="@color/colorAccent"
+                android:textSize="45px"
+                android:typeface="normal" />
+
+            <LinearLayout
+                android:layout_width="975px"
+                android:layout_height="105px"
+                android:layout_marginTop="30px"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/et_store_owner_name"
+                    android:layout_width="975px"
+                    android:layout_height="105px"
+                    android:layout_marginRight="10px"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_rounded_corner"
+                    android:fontFamily="@font/roboto"
+                    android:hint="Store owner's name"
+                    android:paddingLeft="30px"
+                    android:tag="45"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+                <EditText
+                    android:id="@+id/et_store_owner_contact"
+                    android:layout_width="975px"
+                    android:layout_height="105px"
+                    android:layout_marginLeft="10px"
+                    android:layout_weight="1"
+                    android:background="@drawable/gray_rounded_corner"
+                    android:fontFamily="@font/roboto"
+                    android:hint="Owner's Contact no."
+                    android:paddingLeft="30px"
+                    android:tag="45"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_go"
+                android:layout_width="654px"
+                android:layout_height="105px"
+                android:layout_marginTop="80px"
+                android:background="@drawable/btn_gray_rounded_corner_selector"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:tag="45"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textColor="@color/dark_gray"
+                android:textSize="45px"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

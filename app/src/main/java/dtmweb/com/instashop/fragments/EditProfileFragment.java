@@ -1,4 +1,4 @@
-package dtmweb.com.instashop;
+package dtmweb.com.instashop.fragments;
 
 
 import android.os.Bundle;
@@ -7,16 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import dtmweb.com.instashop.R;
 import dtmweb.com.instashop.utils.MultipleScreen;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ProductDetailsFragment extends Fragment {
+public class EditProfileFragment extends Fragment {
 
 
-    public ProductDetailsFragment() {
+    public EditProfileFragment() {
         // Required empty public constructor
     }
 
@@ -25,10 +25,10 @@ public class ProductDetailsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_product_details, container, false);
+        View root = inflater.inflate(R.layout.fragment_edit_profile, container, false);
         new MultipleScreen(getActivity());
         MultipleScreen.resizeAllView((ViewGroup) root);
         return root;
     }
-
 }
+

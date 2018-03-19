@@ -2,20 +2,743 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="dtmweb.com.instashop.fragments.ChoosePaymentTypeFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:scrollbars="none"
+        android:layout_height="match_parent">
 
-        <View
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="130px" />
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="130px" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="600px"
+                    android:layout_below="@+id/product_pager"
+                    android:layout_marginBottom="10px"
+                    android:layout_marginLeft="20px"
+                    android:layout_marginRight="20px"
+                    android:layout_marginTop="-20px"
+                    android:background="@drawable/yellow_item_bg"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="346px"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:layout_marginTop="50px"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="750px"
+                                android:layout_height="75px"
+                                android:fontFamily="@font/roboto"
+                                android:singleLine="true"
+                                android:tag="55"
+                                android:text="Black Ophium"
+                                android:textColor="@color/yellow_main"
+                                android:textSize="55px"
+                                android:typeface="normal" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="75px"
+                                android:layout_marginRight="20px"
+                                android:fontFamily="@font/roboto"
+                                android:singleLine="true"
+                                android:tag="55"
+                                android:text="Perfume for Female"
+                                android:textColor="@color/yellow_main"
+                                android:textSize="55px"
+                                android:typeface="normal" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="150px"
+                                android:layout_marginRight="20px"
+                                android:fontFamily="@font/roboto_light"
+                                android:maxLines="3"
+                                android:tag="39"
+                                android:text="Lorem ipsum dolor sit amet, scelerisque ut nunc, diam vitae sed sollicitudin excepteur luctus malesuada, luctus semper ante dolor pharetra, cras et amet consequat orci ut. Est cumque interdum sociis sem nibh, sit quam purus mollis sapien, potenti odio rutrum eleifend phasellus vehicula, massa nunc. Elit massa dolor cras lectus libero, imperdiet metus. Ante libero integer. Lorem a vestibulum, tempus nullam, massa aliquam mollis libero. Blandit at nec feugiat vitae, molestie eu et nulla malesuada eget ipsum, magnis nonummy lacus earum inceptos, molestie litora diam vestibulum, aliquam amet molestie wisi integer justo. Fusce porta duis felis. Vitae libero euismod curabitur cum mi vestibulum, nullam orci aliquet posuere sem vulputate nec, in magna neque blanditiis, pellentesque ultricies nec ut a justo. Interdum nec et. Sit aliquam in cras natoque."
+                                android:textColor="#545454"
+                                android:textSize="39px"
+                                android:typeface="normal" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginRight="20px"
+                                android:fontFamily="@font/roboto"
+                                android:gravity="right"
+                                android:maxLines="3"
+                                android:tag="39"
+                                android:text="See more"
+                                android:textColor="#545454"
+                                android:textSize="39px"
+                                android:typeface="normal" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10px"
+                            android:layout_marginTop="10px"
+                            android:fontFamily="@font/roboto"
+                            android:singleLine="true"
+                            android:tag="45"
+                            android:text="SAR 3000"
+                            android:textSize="35px"
+                            android:typeface="normal" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/btn_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="20px"
+                        android:layout_marginLeft="50px"
+                        android:layout_marginRight="50px"
+                        android:layout_marginTop="50px"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="600px"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="105px"
+                                android:layout_height="105px"
+                                android:layout_marginLeft="0px"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/test_perfume_zone_logo" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="30px"
+                                android:layout_marginTop="-10px"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10px"
+                                    android:fontFamily="@font/roboto"
+                                    android:singleLine="true"
+                                    android:tag="40"
+                                    android:text="The Pefume Zone"
+                                    android:textColor="#666666"
+                                    android:textSize="40px"
+                                    android:typeface="normal" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="10px"
+                                    android:fontFamily="@font/roboto_thin"
+                                    android:singleLine="true"
+                                    android:tag="35"
+                                    android:text="12 March 2018"
+                                    android:textColor="#666666"
+                                    android:textSize="35px" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20px"
+                            android:gravity="right">
+
+                            <ImageView
+                                android:layout_width="105px"
+                                android:layout_height="105px"
+                                android:src="@drawable/cart_icon" />
+
+                            <ImageView
+                                android:layout_width="105px"
+                                android:layout_height="105px"
+                                android:layout_marginLeft="20px"
+                                android:src="@drawable/fav_icon" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/product_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="700px"></android.support.v4.view.ViewPager>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="250px"
+                android:layout_below="@+id/product_pager"
+                android:layout_marginBottom="10px"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"
+                android:layout_marginTop="10px"
+                android:background="@drawable/yellow_item_bg"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105px"
+                    android:layout_marginBottom="10px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="30px"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10px"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="75px"
+                            android:background="@drawable/blue_rounded_corner_border"
+                            android:editable="false"
+                            android:fontFamily="@font/roboto_light"
+                            android:hint="Color"
+                            android:paddingLeft="30px"
+                            android:tag="40"
+                            android:enabled="false"
+                            android:textColor="@color/blue_main"
+                            android:textColorHint="@color/blue_main"
+                            android:textSize="40px"
+                            android:typeface="normal" />
+
+                        <ImageView
+                            android:layout_width="35px"
+                            android:layout_height="25px"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="30px"
+                            android:layout_marginTop="30px"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/downarrow" />
+                    </RelativeLayout>
 
 
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10px"
+                        android:layout_weight="1">
 
-    </LinearLayout>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="75px"
+                            android:background="@drawable/purple_rounded_corner_border"
+                            android:editable="false"
+                            android:fontFamily="@font/roboto_light"
+                            android:hint="Size"
+                            android:paddingLeft="30px"
+                            android:tag="40"
+                            android:enabled="false"
+                            android:textColor="@color/purple_main"
+                            android:textColorHint="@color/purple_main"
+                            android:textSize="40px"
+                            android:typeface="normal" />
 
+                        <ImageView
+                            android:layout_width="35px"
+                            android:layout_height="25px"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="30px"
+                            android:layout_marginTop="30px"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/downarrow" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10px"
+                        android:layout_weight="1">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="75px"
+                            android:background="@drawable/yellow_rounded_corner_border"
+                            android:editable="false"
+                            android:fontFamily="@font/roboto_light"
+                            android:hint="Quantity"
+                            android:paddingLeft="30px"
+                            android:enabled="false"
+                            android:tag="40"
+                            android:textColor="@color/yellow_main"
+                            android:textColorHint="@color/yellow_main"
+                            android:textSize="40px"
+                            android:typeface="normal" />
+
+                        <ImageView
+                            android:layout_width="35px"
+                            android:layout_height="25px"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="30px"
+                            android:layout_marginTop="30px"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/downarrow" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="75px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:background="@drawable/yellow_btn_rounded_selector"
+                    android:fontFamily="@font/roboto_light"
+                    android:hint="Add to cart"
+                    android:tag="42"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="42px" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="950px"
+                android:layout_below="@+id/product_pager"
+                android:layout_marginBottom="10px"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"
+                android:layout_marginTop="10px"
+                android:background="@drawable/yellow_item_bg"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="750px"
+                    android:layout_height="75px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginTop="50px"
+                    android:fontFamily="@font/roboto"
+                    android:singleLine="true"
+                    android:tag="45"
+                    android:text="Details Description"
+                    android:textColor="#666666"
+                    android:textSize="45px"
+                    android:typeface="normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Gender:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Female"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Type:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Eau De Parfume"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Form:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Spray"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Scent:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Floral"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Place of Origin"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Thailand"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Volume(ml)"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="50ml"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Model Number"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="P7901"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Certification"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="SGS,Reach,Rohs"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Fragrance percentage:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="not less than 10%"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="Valid:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="3 years"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50px"
+                    android:layout_marginLeft="50px"
+                    android:layout_marginRight="50px"
+                    android:layout_marginTop="20px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50px"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="bottle color:"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="50px"
+                        android:layout_marginRight="20px"
+                        android:fontFamily="@font/roboto_light"
+                        android:gravity="right"
+                        android:singleLine="true"
+                        android:tag="39"
+                        android:text="red blue nad black"
+                        android:textColor="#545454"
+                        android:textSize="39px"
+                        android:typeface="normal" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>

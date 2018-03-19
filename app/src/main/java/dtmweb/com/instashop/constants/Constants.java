@@ -12,6 +12,9 @@ public class Constants {
     public static final int FRAG_ADD_PRODUCT = 5;
     public static final int FRAG_ADD_NEW_CARD = 6;
     public static final int FRAG_CHOOSE_PAYMENT_METHOD = 7;
+    public static final int FRAG_EDIT_PROFILE = 8;
+    public static final int FRAG_PRODUCT_DETAILS = 9;
+
 
 
     public static final String CATEGORY_BUYER = "buyerType" ;

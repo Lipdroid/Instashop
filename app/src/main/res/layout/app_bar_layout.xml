@@ -20,6 +20,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -43,15 +44,15 @@
                     android:id="@+id/nav_badge"
                     android:layout_width="50px"
                     android:layout_height="50px"
-                    android:background="@drawable/white_badge"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:text="20"
                     android:layout_marginLeft="87px"
                     android:layout_marginTop="20px"
+                    android:background="@drawable/white_badge"
+                    android:gravity="center"
+                    android:tag="25"
+                    android:text="20"
                     android:textColor="#208CA7"
                     android:textSize="25px"
-                    android:tag="25"
                     android:textStyle="bold"
                     android:visibility="visible" />
 
@@ -62,10 +63,10 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/roboto"
-                    android:text=""
-                    android:textSize="36px"
                     android:tag="36"
-                    android:textColor="#666666"/>
+                    android:text=""
+                    android:textColor="#666666"
+                    android:textSize="36px" />
 
                 <ImageView
                     android:id="@+id/btn_right_drawer"
@@ -74,7 +75,28 @@
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="30px"
+                    android:visibility="visible"
                     android:src="@drawable/right_drawer_icon" />
+
+                <ImageView
+                    android:id="@+id/btn_right_back"
+                    android:layout_width="80px"
+                    android:layout_height="50px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:visibility="gone"
+                    android:src="@drawable/left_back_icon" />
+
+                <ImageView
+                    android:id="@+id/btn_right_cross"
+                    android:layout_width="80px"
+                    android:layout_height="50px"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="30px"
+                    android:visibility="gone"
+                    android:src="@drawable/cross_icon_dark" />
 
                 <View
                     android:layout_width="match_parent"

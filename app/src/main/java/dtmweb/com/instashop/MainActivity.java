@@ -1,10 +1,8 @@
 package dtmweb.com.instashop;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
-import android.net.Uri;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +21,6 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -32,10 +28,13 @@ import dtmweb.com.instashop.constants.Constants;
 import dtmweb.com.instashop.fragments.AddCardFragment;
 import dtmweb.com.instashop.fragments.AddProductFragment;
 import dtmweb.com.instashop.fragments.ChoosePaymentTypeFragment;
+import dtmweb.com.instashop.fragments.EditProfileFragment;
 import dtmweb.com.instashop.fragments.HomeFragment;
 import dtmweb.com.instashop.fragments.ManageOrderFragment;
 import dtmweb.com.instashop.fragments.ManageProductFragment;
 import dtmweb.com.instashop.fragments.MyStoreFragment;
+import dtmweb.com.instashop.fragments.ProductDetailsFragment;
+import dtmweb.com.instashop.models.ProductObject;
 import dtmweb.com.instashop.utils.CorrectSizeUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -74,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText et_location = null;
     private EditText et_store = null;
     private ImageView btn_back_right = null;
+    private ImageView btn_right_back = null;
+    private ImageView btn_right_cross = null;
     private Button btn_search = null;
 
 
@@ -147,13 +148,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_my_orders.setOnClickListener(this);
         //right drawer listener
         btn_back_right.setOnClickListener(this);
+        btn_right_back.setOnClickListener(this);
+        btn_right_cross.setOnClickListener(this);
+
         btn_search.setOnClickListener(this);
 
     }
 
     private void findViews() {
-        btn_left_drawer = (ImageView) findViewById(R.id.btn_left_drawer);
-        btn_right_drawer = (ImageView) findViewById(R.id.btn_right_drawer);
         mToolBar = (Toolbar) findViewById(R.id.toolbar);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -162,6 +164,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         drawer_left_layout = (RelativeLayout) findViewById(R.id.drawer_left);
         drawer_right_layout = (LinearLayout) findViewById(R.id.drawer_right);
         header_title = (TextView) findViewById(R.id.header_title);
+        btn_right_back = (ImageView) findViewById(R.id.btn_right_back);
+        btn_right_cross = (ImageView) findViewById(R.id.btn_right_cross);
+        btn_left_drawer = (ImageView) findViewById(R.id.btn_left_drawer);
+        btn_right_drawer = (ImageView) findViewById(R.id.btn_right_drawer);
 
         //left drawer items
         btn_home = (LinearLayout) findViewById(R.id.btn_home);
@@ -205,9 +211,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_home:
                 closeLeftDrawer();
                 afterClickMenuItem(Constants.FRAG_HOME);
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
                 break;
             case R.id.btn_my_chart:
                 closeLeftDrawer();
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
                 break;
             case R.id.btn_my_orders:
                 closeLeftDrawer();
@@ -215,20 +225,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_manage_products:
                 closeLeftDrawer();
                 afterClickMenuItem(Constants.FRAG_MANAGE_PRODUCTS);
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
                 break;
             case R.id.btn_manage_orders:
                 closeLeftDrawer();
                 afterClickMenuItem(Constants.FRAG_MANAGE_ORDERS);
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
                 break;
             case R.id.btn_my_store:
                 closeLeftDrawer();
                 afterClickMenuItem(Constants.FRAG_MY_STORE);
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
                 break;
             case R.id.btn_language:
                 showPopup(arrow_language);
                 break;
             case R.id.btn_my_plan:
                 closeLeftDrawer();
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
                 break;
             case R.id.btn_logout:
                 closeLeftDrawer();
@@ -248,13 +266,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_edit_profile:
                 closeLeftDrawer();
+                afterClickMenuItem(Constants.FRAG_EDIT_PROFILE);
+                LockRightDrawer();
+                setUpHeaderRightButton(3);
                 break;
             case R.id.btn_back_right:
                 closeRightDrawer();
                 break;
             case R.id.btn_search:
                 closeRightDrawer();
+            case R.id.btn_right_back:
+                afterClickBack();
                 break;
+            case R.id.btn_right_cross:
+                afterClickBack();
+                break;
+        }
+    }
+
+    private void afterClickBack() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int count = fragmentManager.getBackStackEntryCount();
+        if (count == 0) {
+            finish();
+        } else {
+            String title = fragmentManager.getBackStackEntryAt(count - 1).getName();
+            super.onBackPressed();
+            updateActionBar(Integer.valueOf(title), null);
         }
     }
 
@@ -354,6 +392,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case Constants.FRAG_CHOOSE_PAYMENT_METHOD:
                 newFrag = new ChoosePaymentTypeFragment();
                 break;
+            case Constants.FRAG_EDIT_PROFILE:
+                newFrag = new EditProfileFragment();
+                break;
             default:
                 break;
         }
@@ -392,6 +433,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case Constants.FRAG_ADD_PRODUCT:
                 header_title.setText("Add Product");
                 break;
+            case Constants.FRAG_EDIT_PROFILE:
+                header_title.setText("Edit Profile");
+                break;
             default:
                 break;
         }
@@ -413,6 +457,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 R.anim.view_transition_out_right);
 
         Bundle args = null;
+        if (obj != null) {
+            if (obj.getClass().toString().equals(ProductObject.class.toString())) {
+                args = new Bundle();
+                args.putParcelable(obj.getClass().toString(), (ProductObject) obj);
+            }
+        }
 
 
         Fragment frag = null;
@@ -420,6 +470,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case Constants.FRAG_ADD_PRODUCT:
                 frag = new AddProductFragment();
                 changeHeaderLayout(Constants.FRAG_ADD_PRODUCT);
+                setUpHeaderRightButton(2);
+                LockRightDrawer();
+                break;
+            case Constants.FRAG_PRODUCT_DETAILS:
+                frag = new ProductDetailsFragment();
+                setUpHeaderRightButton(1);
+                LockRightDrawer();
                 break;
             default:
                 break;
@@ -437,18 +494,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         fragTransaction.commit();
     }
 
+    private void setUpHeaderRightButton(int type) {
+        switch (type) {
+            case 0:
+                btn_right_drawer.setVisibility(View.VISIBLE);
+                btn_right_back.setVisibility(View.GONE);
+                btn_right_cross.setVisibility(View.GONE);
+                break;
+            case 1:
+                btn_right_drawer.setVisibility(View.GONE);
+                btn_right_back.setVisibility(View.VISIBLE);
+                btn_right_cross.setVisibility(View.GONE);
+                break;
+            case 2:
+                btn_right_drawer.setVisibility(View.GONE);
+                btn_right_back.setVisibility(View.GONE);
+                btn_right_cross.setVisibility(View.VISIBLE);
+                break;
+            case 3:
+                btn_right_drawer.setVisibility(View.GONE);
+                btn_right_back.setVisibility(View.GONE);
+                btn_right_cross.setVisibility(View.GONE);
+                break;
+        }
+    }
+
 
     @Override
     public void onBackPressed() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        int count = fragmentManager.getBackStackEntryCount();
-        if (count == 0) {
-            finish();
-        } else {
-            String title = fragmentManager.getBackStackEntryAt(count - 1).getName();
-            super.onBackPressed();
-            updateActionBar(Integer.valueOf(title), null);
-        }
+        afterClickBack();
     }
 
     public void updateActionBar(int destFragId, Object obj) {
@@ -457,6 +531,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case Constants.FRAG_ADD_PRODUCT:
                 title = "";
                 mCurrentFrag = null;
+                UnlockRightDrawer();
+                setUpHeaderRightButton(0);
+                break;
+            case Constants.FRAG_PRODUCT_DETAILS:
+                title = "";
+                mCurrentFrag = null;
+                setUpHeaderRightButton(0);
+                UnlockRightDrawer();
                 break;
         }
 
@@ -527,4 +609,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCorrectSize.correctSize(popupView);
         popupWindow.showAsDropDown(v);
     }
+
+    private void LockRightDrawer() {
+        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+    }
+
+    private void UnlockRightDrawer() {
+        mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
+    }
+
 }

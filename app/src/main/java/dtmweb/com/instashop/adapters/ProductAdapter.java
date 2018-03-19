@@ -5,10 +5,13 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 
 import java.util.List;
 
+import dtmweb.com.instashop.MainActivity;
 import dtmweb.com.instashop.R;
+import dtmweb.com.instashop.constants.Constants;
 import dtmweb.com.instashop.holders.OrderHistoryHolder;
 import dtmweb.com.instashop.holders.ProductHolder;
 import dtmweb.com.instashop.models.OrderObject;
@@ -54,6 +57,7 @@ public class ProductAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = mActivity.getLayoutInflater().inflate(R.layout.item_product_main, viewGroup, false);
             mHolder = new ProductHolder();
+            mHolder.main_root = (LinearLayout) convertView.findViewById(R.id.main_root);
 
             new MultipleScreen(mActivity);
             MultipleScreen.resizeAllView((ViewGroup) convertView);
@@ -63,8 +67,19 @@ public class ProductAdapter extends BaseAdapter {
             mHolder = (ProductHolder) convertView.getTag();
         }
 
-
+        setListenersForViews(position);
         return convertView;
+    }
+
+    private void setListenersForViews(final int position) {
+        mHolder.main_root.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                ((MainActivity) mContext).addSecondStageFragment(Constants.FRAG_PRODUCT_DETAILS, mListData.get(position));
+                ((MainActivity) mContext).addSecondStageFragment(Constants.FRAG_PRODUCT_DETAILS, null);
+
+            }
+        });
     }
 
 }
